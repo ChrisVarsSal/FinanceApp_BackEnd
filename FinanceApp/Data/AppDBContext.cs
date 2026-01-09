@@ -15,5 +15,6 @@ namespace FinanceApp.Data
         public DbSet<User> User { get; set; }
         public DbSet<Saving> Saving { get; set; }
         public DbSet<Loan> Loan { get; set; }
+        public DbSet<Faq> Faq { get; set; }
     }
 }
