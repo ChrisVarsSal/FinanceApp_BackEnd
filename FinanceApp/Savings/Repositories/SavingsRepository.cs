@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FinanceApp.Data;
 using FinanceApp.Savings.Interfaces;
 using FinanceApp.Savings.Models;
+using FinanceApp.Users.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinanceApp.Savings.Repositories
@@ -16,13 +17,13 @@ namespace FinanceApp.Savings.Repositories
         {
             _context = context;
         }
-        public async Task<Saving> CreateSavingAsync(Saving saving)
+        public async Task<Saving> CreateSavingsAsync(Saving saving)
         {
             await _context.Saving.AddAsync(saving);
             await _context.SaveChangesAsync();
             return saving;
         }
-        public async Task<bool> DeleteSavingAsync(int id)
+        public async Task<bool> DeleteSavingsAsync(int id)
         {
             var savingModel = await _context.Saving.FirstOrDefaultAsync(x => x.Id == id);
             if (savingModel == null)
@@ -33,7 +34,7 @@ namespace FinanceApp.Savings.Repositories
             await _context.SaveChangesAsync();
             return true;
         }
-        public async Task<Saving?> UpdateSavingAsync(int id, Saving updateSaving)
+        public async Task<Saving?> UpdateSavingsAsync(int id, Saving updateSaving)
         {
             var savingModel = await _context.Saving.FirstOrDefaultAsync(x => x.Id == id);
             if (savingModel == null)
@@ -54,9 +55,9 @@ namespace FinanceApp.Savings.Repositories
             return await _context.Saving.ToListAsync();
         }
 
-        public Task<User?> GetByIdAsync(int id)
+        public async Task<Saving?> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Saving.FindAsync(id); 
         }
     }
 }

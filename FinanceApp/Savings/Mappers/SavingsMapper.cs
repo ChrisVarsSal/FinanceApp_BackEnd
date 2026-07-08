@@ -9,7 +9,7 @@ namespace FinanceApp.Savings.Mappers
 {
     public static class SavingsMapper
     {
-        public static SavingsDto ToLoanDto(this Saving savingsModel)
+        public static SavingsDto ToSavingsDto(this Saving savingsModel)
         {
             return new SavingsDto
             {
@@ -25,7 +25,7 @@ namespace FinanceApp.Savings.Mappers
             };
         }
 
-        public static Saving ToSavingFromCreateDto(this CreateSavingsRequestDto savingDto)
+        public static Saving ToSavingsFromCreateDto(this CreateSavingsRequestDto savingDto)
         {
             return new Saving
             {
@@ -36,6 +36,20 @@ namespace FinanceApp.Savings.Mappers
                 InitialDeposit = savingDto.InitialDeposit,
                 MonthlyDeposit = savingDto.MonthlyDeposit,
                 RequestedDate = savingDto.RequestedDate,
+            };
+        }
+
+        public static Saving ToSavingsFromUpdateDto(this UpdateSavingsRequestDto updateDto)
+        {
+            return new Saving
+            {
+                Name = updateDto.Name,
+                Description = updateDto.Description,
+                Amount = updateDto.Amount,
+                InterestRate = updateDto.InterestRate,
+                InitialDeposit = updateDto.InitialDeposit,
+                MonthlyDeposit = updateDto.MonthlyDeposit,
+                RequestedDate = updateDto.RequestedDate,
             };
         }
     }
