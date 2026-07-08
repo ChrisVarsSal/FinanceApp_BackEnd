@@ -17,8 +17,8 @@ namespace FinanceApp.Loans.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal InterestRate { get; set; }
         [Column(TypeName = "decimal(18,2)")]
-        public string Status { get; set; } = string.Empty;
         public decimal MonthlyDeposit { get; set; }
+        public string Status { get; set; } = string.Empty;
         public DateTime RequestedDate { get; set; } = DateTime.Now;
         public int? UserId { get; set; }
         public UserEntity? User { get; set; }

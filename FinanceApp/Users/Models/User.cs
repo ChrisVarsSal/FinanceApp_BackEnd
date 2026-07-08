@@ -14,7 +14,7 @@ namespace FinanceApp.Users.Models
         public string ConfirmPassword { get; set; } = string.Empty;
         public string Address { get; set; } = string.Empty;
         public string PhoneNumber { get; set; } = string.Empty;
-        public List<UserEntity> Loans { get; set; } = new List<UserEntity>();
+        public List<Loan> Loans { get; set; } = new List<Loan>();
         public List<Saving> Savings { get; set; } = new List<Saving>();
     }
 }
