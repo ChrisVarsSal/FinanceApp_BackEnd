@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FinanceApp.Models;
+using FinanceApp.Users.Models;
+using FinanceApp.Loans.Models;
+using FinanceApp.Savings.Models;
+using FinanceApp.Faqs.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinanceApp.Data
