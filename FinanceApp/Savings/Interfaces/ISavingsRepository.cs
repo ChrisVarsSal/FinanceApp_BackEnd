@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FinanceApp.Savings.Models;
-using UserEntity = FinanceApp.User.Models.User;
 
 
 namespace FinanceApp.Savings.Interfaces
@@ -11,9 +10,9 @@ namespace FinanceApp.Savings.Interfaces
     public interface ISavingsRepository
     {
         Task<List<Saving>> GetAllSavingsAsync();
-        Task<UserEntity?> GetByIdAsync(int id);
-        Task<Saving> CreateSavingAsync(Saving saving);
-        Task<Saving?> UpdateSavingAsync(int id, Saving saving);
-        Task<bool> DeleteSavingAsync(int id);
+        Task<Saving?> GetByIdAsync(int id);
+        Task<Saving> CreateSavingsAsync(Saving saving);
+        Task<Saving?> UpdateSavingsAsync(int id, Saving saving);
+        Task<bool> DeleteSavingsAsync(int id);
     }
 }
